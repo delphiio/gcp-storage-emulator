@@ -5,6 +5,14 @@
 [![codecov](https://codecov.io/gh/oittaa/gcp-storage-emulator/branch/main/graph/badge.svg?token=GpiSgoXsGL)](https://codecov.io/gh/oittaa/gcp-storage-emulator)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
+---
+this is a fork from (https://github.com/oittaa/gcp-storage-emulator).It supports a new environmental variable BASE_URL_FOR_MEDIA_LINK. this is the address that the server will send back to the client when needed. If you are running this in docker-compose in a service called gcp-storage-emulator, use:
+
+    env:
+      PORT: "4443"
+      BASE_URL_FOR_MEDIA_LINK: "http://gcp-storage-emulator:4443"
+
+
 Google doesn't (yet) ship an emulator for the Cloud Storage API like they do for
 Cloud Datastore.
 

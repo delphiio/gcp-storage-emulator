@@ -1,4 +1,5 @@
 import gzip
+import os
 import json
 import logging
 import re
@@ -210,6 +211,7 @@ class Request(object):
         self._base_url = "http://{}:{}".format(
             self._server_address[0], self._server_address[1]
         )
+        self._base_url = os.environ.get("BASE_URL_FOR_MEDIA_LINK", self._base_url)
         self._full_url = self._base_url + self._path
         self._parsed_url = urlparse(self._full_url)
         self._query = parse_qs(self._parsed_url.query)
